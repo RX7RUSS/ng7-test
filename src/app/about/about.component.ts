@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  images: object
+  randomImages: object
+
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.getImages().subscribe(data => {
+        this.images = data
+        console.log(this.images);
+      }
+    );
+
+    this.data.randomImages().subscribe(data => {
+        this.randomImages = data
+        console.log(this.randomImages);
+      }
+    );
   }
 
 }

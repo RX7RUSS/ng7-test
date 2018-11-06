@@ -11,4 +11,12 @@ export class DataService {
   getUsers() {
     return this.http.get('https://reqres.in/api/users')
   }
+
+  getImages() {
+    return this.http.get('https://reqres.in/api/images')
+  }
+
+  randomImages() {
+    return this.http.get('https://reqres.in/api/images')
+  }  
 }

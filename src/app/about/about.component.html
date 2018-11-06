@@ -1,3 +1,9 @@
-<p>
-  about works!
-</p>
+<h1>About Images</h1>
+
+<ul *ngIf="images">
+  <li *ngFor="let image of images.data">
+    <p>{{ image.id }}</p>
+    <p>{{ image.name }}</p>
+    <p>{{ image.pantone_value }}</p>
+  </li>
+</ul>
